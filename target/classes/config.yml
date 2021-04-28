@@ -1,0 +1,31 @@
+# CosmeticsGUI Plugin Configuration
+# Deleting the configuration in the plugin's data folder will cause this default config to be loaded.
+# For each setting, there is a small description.
+
+# Back button styling
+# Back button can only have an item attribute
+backbutton:
+  position: [4, 5]
+  name: §4§lBack
+  item: GOLDEN_HORSE_ARMOR
+
+# Category Items
+# If a head, use the texture element
+# If an item, use the item element
+# Position starts from 0 for both axii, and up to 8 for the x, and 5 for the y
+categories:
+  pets:
+    position: [0, 1]
+    name: §6§lPets
+    lore:
+      - §7Everyone needs a cute companion to go on adventures with
+      - §7§oCatch them all!
+    texture: d8cdd4f285632c25d762ece25f4193b966c2641b15d9bdbc0a113023de76ab
+    command: help essentials
+  mounts:
+    position: [2, 1]
+    name: Mounts
+    lore:
+      - Lore line 1
+    item: GOLDEN_HORSE_ARMOR
+    command: help essentials

@@ -1,0 +1,26 @@
+# Entry point
+main: world.atlantix.cosmeticsgui.CosmeticsGUI
+
+# Plugin Information
+name: CosmeticsGUI
+version: 0.1-SNAPSHOT
+description: Ties the three cosmetic plugins together into one GUI
+api-version: 1.16
+
+depend: [WolfyUtilities]
+
+# Command Registry
+commands:
+  cosmeticshop:
+    aliases: [cs]
+    description: Opens Atlantix's Cosmetic Shop
+    permission: cosmeticsgui.use
+    permission-message: "§4You do not have access to that command."
+
+permissions:
+  cosmeticsgui.use:
+    description: Allows a player to open the gui
+    default: true
+  cosmeticsgui.admin:
+    description: Allows adminstrative commands for CosmeticGUI
+    default: op
