@@ -54,6 +54,7 @@ public class CosmeticsGUI extends JavaPlugin {
         try {
             loadConfigData();
         } catch (InvalidAttributeValueException e) {
+            e.printStackTrace();
             super.getServer().getPluginManager().disablePlugin(this);
             return;
         }
