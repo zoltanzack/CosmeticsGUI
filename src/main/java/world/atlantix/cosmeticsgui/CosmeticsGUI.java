@@ -7,10 +7,8 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import javax.management.InvalidAttributeValueException;
-import java.awt.*;
 import java.util.*;
 import java.util.List;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -39,9 +37,6 @@ public class CosmeticsGUI extends JavaPlugin {
         /* Initialise logger */
         CosmeticsGUI.log = super.getLogger(); // super refers to the parent class (JavaPlugin), which defines a logger for this plugin.
 
-        /* Load player textures */
-        loadTextures();
-
         /* If no custom config file exists, save the default one as the base of the custom config */
         super.saveDefaultConfig();
 
@@ -63,12 +58,12 @@ public class CosmeticsGUI extends JavaPlugin {
             return;
         }
 
-        TestGUI testGUI = new TestGUI("Test", menuCategoryList, backButton);
+        MenuGUI menuGUI = new MenuGUI("Atlantix Cosmetics GUI", menuCategoryList, backButton);
 
         /* Register event handlers */
 
         /* Register command exeecutors */
-        Bukkit.getPluginCommand("cosmeticshop").setExecutor(new CosmeticsGUICommand(this, testGUI));
+        Bukkit.getPluginCommand("cosmeticshop").setExecutor(new CosmeticsGUICommand(this, menuGUI));
 
     }
 
@@ -155,12 +150,8 @@ public class CosmeticsGUI extends JavaPlugin {
 
     }
 
-    private void loadTextures() {
-
-    }
-
     public void onDisable() {
-        super.saveConfig();
+        //super.saveConfig();
     }
 
     public FileConfiguration getConfig() { return super.getConfig(); }

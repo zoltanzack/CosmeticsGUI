@@ -10,11 +10,11 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
-public class TestGUI extends ChestGui {
+public class MenuGUI extends ChestGui {
 
     MenuCategory[] categories;
 
-    public TestGUI(@NotNull String title, MenuCategory[] categories, MenuCategory backButton) {
+    public MenuGUI(@NotNull String title, MenuCategory[] categories, MenuCategory backButton) {
         super(6, title);
 
         this.categories = categories;
@@ -40,8 +40,9 @@ public class TestGUI extends ChestGui {
         super.addPane(categoryPane);
 
         // Back Button
-        StaticPane back = new StaticPane(4, 5, 1, 1);
+        StaticPane back = new StaticPane(backButton.getPosition()[0], backButton.getPosition()[1], 1, 1);
         back.addItem(new GuiItem(backButton.getItem(), event -> {
+            event.setCancelled(true);
             event.getWhoClicked().closeInventory();
         }), 0, 0);
 

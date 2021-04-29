@@ -21,9 +21,9 @@ import java.util.logging.Level;
  */
 public class CosmeticsGUICommand implements CommandExecutor, TabCompleter {
     private final CosmeticsGUI INSTANCE;
-    private final TestGUI gui;
+    private final MenuGUI gui;
 
-    public CosmeticsGUICommand(CosmeticsGUI instance, TestGUI gui) {
+    public CosmeticsGUICommand(CosmeticsGUI instance, MenuGUI gui) {
         this.INSTANCE = instance;
         this.gui = gui;
 
