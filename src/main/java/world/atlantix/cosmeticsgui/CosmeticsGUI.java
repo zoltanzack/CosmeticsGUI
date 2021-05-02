@@ -59,9 +59,8 @@ public class CosmeticsGUI extends JavaPlugin {
             return;
         }
 
+        /* Instantiate menuGUI object */
         MenuGUI menuGUI = new MenuGUI("Atlantix Cosmetics GUI", menuCategoryList, backButton);
-
-        /* Register event handlers */
 
         /* Register command exeecutors */
         Bukkit.getPluginCommand("cosmeticshop").setExecutor(new CosmeticsGUICommand(this, menuGUI));
